@@ -1,0 +1,131 @@
+Q1 - What is collection Famework in java ?
+
+ANS - The Collection Framework in Java is a unified architecture for representing and manipulating collections of objects. It provides a set of interfaces (such as List, Set, Queue, and Map) and classes (such as ArrayList, LinkedList, HashSet, and HashMap) that implement these interfaces to store and manipulate groups of objects.
+	Key components of the Collection Framework include:
+	* Interfaces
+	* Classes
+	* Algorithms
+	* Iterators
+
+Q2 - What is the difference between Arraylist and linkedlist ?
+
+ANS - ArrayList and LinkedList are both implementations of the List interface in Java, but they have different underlying data structures and performance characteristics. Here are the main differences between ArrayList and LinkedList:
+
+Underlying Data Structure:
+
+ * ArrayList: Internally uses a dynamic array to store elements. Elements are stored in a contiguous memory block, and resizing the array involves creating a new array and copying elements from the old array to the new one.
+ * LinkedList: Internally uses a doubly linked list to store elements. Each element in the list is represented by a node that contains a reference to the previous and next nodes in the list.
+
+Insertion and Deletion Performance:
+
+ * ArrayList:
+ Offers fast random access and efficient element retrieval using index-based access (get(index)). However, insertion and deletion operations may be slower, especially when adding or removing elements in the middle of the list, as it requires shifting subsequent elements to accommodate the change.
+ * LinkedList: Offers efficient insertion and deletion operations, especially for adding or removing elements at the beginning or end of the list or for operations involving iterators. However, random access to elements may be slower compared to ArrayList because it requires traversing the list from the beginning or end to reach the desired element.
+
+Memory Usage:
+
+ * ArrayList: Requires less memory overhead per element since it only needs to store the elements themselves and the underlying array's overhead.
+ * LinkedList: Requires more memory overhead per element due to the additional memory required for storing node references (pointers).
+
+Q3 - What is the difference between Iterator and listiterators ?
+
+ANS -  
+In Java, both Iterator and ListIterator are interfaces used to traverse elements in a collection, but they have different capabilities and are intended for different types of collections.
+
+Here are the main differences between Iterator and ListIterator:
+
+Traversal Direction:
+
+  * Iterator: Supports forward-only traversal of elements in a collection. It provides methods like next() to move forward to the next element and hasNext() to check if there are more elements available for traversal.
+  * ListIterator: Supports bidirectional (forward and backward) traversal of elements in a list. In addition to methods for forward traversal (next() and hasNext()), it also provides methods for backward traversal (previous() and hasPrevious()).
+
+Modification Operations:
+
+  * Iterator: Provides limited support for modifying the collection while iterating. It only allows for removal of elements using the remove() method, which removes the last element returned by the next() method.
+  * ListIterator: Provides more extensive support for modifying the list while iterating. In addition to removal (remove()), it also supports adding elements (add()) and replacing elements (set()). These operations can be performed at the current position of the iterator.
+
+Supported Collections:
+
+ * Iterator: Can be used with any collection that implements the Iterable interface, such as ArrayList, HashSet, LinkedList, etc.
+ * ListIterator: Can only be used with lists that implement the List interface, such as ArrayList, LinkedList, Vector, etc. It cannot be used with other types of collections like sets or maps.
+
+Q4 - What is the difference between Iterator and Enumeration ?
+
+ANS - In Java, both Iterator and Enumeration are interfaces used to traverse elements in a collection, but they have different capabilities and are intended for different purposes. Here are the main differences between Iterator and Enumeration:
+
+Legacy vs. Modern:
+
+ * Enumeration: It's a legacy interface introduced in Java 1.0 and is part of the original Java Collections Framework.
+ *Iterator: It's a newer interface introduced in Java 1.2 as part of the Java Collections Framework enhancements.
+
+Traversal Direction:
+
+ * Enumeration: Supports only forward traversal of elements. It provides methods like hasMoreElements() to check if there are more elements available for traversal and nextElement() to retrieve the next element.
+ * Iterator: Supports forward-only traversal of elements. It provides methods like hasNext() to check if there are more elements available for traversal and next() to retrieve the next element.
+
+Modification Operations:
+
+ * Enumeration: Does not support modification operations on the underlying collection while iterating. It's read-only.
+ * Iterator: Provides limited support for modification operations on the underlying collection while iterating. It allows for removal of elements using the remove() method.
+
+Q5 - What is the difference between List and Set ?
+
+ANS - 
+In Java, both List and Set are interfaces that represent collections of elements, but they have different characteristics and are used for different purposes. Here are the main differences between List and Set:
+
+Duplicates:
+
+ *List: Allows duplicate elements. Elements can be added to a list multiple times, and they will be stored in the order they were added.
+ * Set: Does not allow duplicate elements. If you attempt to add a duplicate element to a set, the duplicate will be ignored, and the set will remain unchanged.
+
+Ordering:
+
+ * List: Maintains the order of elements as they were inserted. Lists are ordered collections, meaning that elements are stored in a specific sequence, and this sequence is maintained unless explicitly modified.
+ * Set: Does not guarantee any specific order of elements. Sets may or may not maintain the order in which elements were added. The ordering of elements in a set depends on the specific implementation class.
+
+Accessing Elements:
+
+ * List: Allows access to elements by their index. You can retrieve elements from a list using their index position, iterate over elements sequentially, and perform operations like adding, removing, or modifying elements at specific positions.
+ * Set: Does not provide direct access to elements by their index. Elements in a set are accessed through iteration or by checking for element membership using the contains() method.
+
+Q6 - What is the difference between Hashset and Treeset ?
+
+ANS - 
+In Java, both HashSet and TreeSet are implementations of the Set interface, but they have different underlying data structures and performance characteristics. Here are the main differences between HashSet and TreeSet:
+
+Underlying Data Structure:
+
+ * HashSet: Uses a hash table to store elements. It provides constant-time performance (O(1)) for basic operations like adding, removing, and checking for the presence of elements, assuming a good hash function and uniform distribution of elements.
+ * TreeSet: Uses a red-black tree (specifically, a self-balancing binary search tree) to store elements. It maintains the elements in sorted order according to their natural ordering or a custom comparator provided at the time of creation. Insertion, deletion, and lookup operations have a time complexity of O(log n), where n is the number of elements in the set.
+
+Ordering:
+
+ * HashSet: Does not guarantee any specific order of elements. Elements are stored based on their hash code and may not be returned in the order they were inserted.
+ * TreeSet: Maintains elements in sorted order according to their natural ordering (if they implement the Comparable interface) or a custom ordering specified by a comparator. Iterating over a TreeSet will return elements in sorted order.
+
+Performance:
+
+ * HashSet: Generally offers better performance for basic operations like adding, removing, and checking for the presence of elements due to its constant-time complexity.
+ * TreeSet: Offers efficient performance for operations involving ordered traversal, such as finding the minimum or maximum element, finding elements within a range, or performing ordered iteration.
+
+Q7 - What is the difference between Array and ArrayList ?
+
+ANS - 
+In Java, both arrays ([]) and ArrayList are used to store collections of elements, but they have several differences in terms of features, flexibility, and usage. Here are the main differences between arrays and ArrayList:
+
+Static vs. Dynamic Size:
+
+ * Array: Arrays have a fixed size, which is determined at the time of array creation. Once created, the size of an array cannot be changed.
+ * ArrayList: ArrayList is a dynamic array-based data structure that can grow or shrink in size dynamically as elements are added or removed. It automatically handles resizing and reallocation of memory as needed.
+
+Primitives vs. Objects:
+
+ * Array: Arrays can store both primitive data types (such as int, double, char, etc.) and objects (such as instances of classes).
+ * ArrayList: ArrayList can only store objects (instances of classes). It cannot store primitive data types directly, but it can store their corresponding wrapper classes (such as Integer, Double, Character, etc.).
+
+Mutability:
+
+ * Array: The elements of an array can be modified directly using array index notation (array[index] = value). However, the size of the array cannot be changed once it's created.
+ * ArrayList: Elements can be added, removed, or modified dynamically using methods provided by the ArrayList class (add(), remove(), set(), etc.). ArrayList automatically handles resizing and reallocation of memory as elements are added or removed.
+
+
